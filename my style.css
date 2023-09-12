@@ -1,0 +1,204 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    min-height: 100vh;
+  }
+  
+  main {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 640px 1fr; /* Заменяем flex на grid */
+    grid-template-rows: 1fr;
+    grid-template-areas: "left right"; /* Заменяем flex-direction на grid-template-areas */
+  }
+  
+  .left-side {
+    grid-area: left; /* Заменяем flex на grid */
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Заменяем flex-direction на grid-template-rows */
+  }
+  
+  /* Header Start */
+  
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto; /* Заменяем flex на grid */
+    padding: 28px 24px;
+    align-items: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    gap: 16px;
+    display: flex; /* Заменяем flex на grid */
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #A0AEC0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  nav ul li:first-child a {
+    color: #2D3748;
+  }
+  
+  .logo {
+    width: 162px;
+    height: 52px;
+  }
+  
+  /* Header END */
+  
+  /* Form Start */
+  
+  .form-container {
+    padding: 80px;
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Заменяем flex-direction на grid-template-rows */
+    gap: 24px;
+  }
+  
+  .form-container .form-nav ul {
+    display: grid;
+    grid-template-columns: auto auto; /* Заменяем flex на grid */
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .form-container .form-nav a {
+    color: #A0AEC0;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+  }
+  
+  .form-container .form-nav li:first-child a {
+    color: #2D3748;
+  }
+  
+  .form-container form {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Заменяем flex-direction на grid-template-rows */
+    gap: 24px;
+  }
+  
+  .form-container form label {
+    color: #2D3748;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .form-container form .mobile_number-section span {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #EDF2F7;
+    color: #2D3748;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  
+  .form-container form input {
+    padding: 8px 16px;
+    border: 1px solid #CBD5E0;
+    border-radius: 6px;
+    height: 40px;
+    width: 100%;
+  }
+  
+  .form-container form .mobile_number-section input {
+    width: calc(100% - 73px);
+    border-left: 0px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0px;
+  }
+  
+  .input-group {
+    display: grid;
+    grid-template-columns: 15% 100%;
+  }
+  
+  .form-container .form-container-footer {
+    display: grid;
+    grid-template-rows: 1fr auto 1fr; /* Заменяем flex-direction на grid-template-rows */
+    gap: 24px;
+  }
+  
+  .form-container .form-container-footer * {
+    text-align: center;
+  }
+  
+  .form-container .form-container-footer input {
+    color: white;
+    font-weight: bold;
+    background-color: #CBD5E0;
+    width: 480px;
+    height: 48px;
+  }
+  
+  .form-container .form-container-footer > a.button-reg {
+    border: 1px solid #E2E8F0;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    width: 480px;
+    height: 48px;
+    padding: 8px 0 8px 0;
+    border-radius: 6px;
+  }
+  
+  /* Form End */
+  
+  /* Footer Start */
+  
+  footer {
+    padding: 24px 56px 0 56px;
+    display: grid;
+    grid-template-columns: auto 1fr; /* Заменяем flex на grid */
+    justify-items: end;
+  }
+  
+  footer img {
+    width: 96px;
+    height: 32px;
+  }
+  
+  footer a {
+    color: #718096;
+  }
+  
+  /* Footer End */
+  
+  .right-side {
+    background-color: green;
+    flex: 1 1 auto;
+    background-image: url("section-image.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
+  }
+  
+  @media screen and (max-width: 992px){
+    .right-side {
+        display: none;
+    }
+    main {
+        grid-template-columns: 1fr;
+        padding: 0 40px;
+    }
+}
